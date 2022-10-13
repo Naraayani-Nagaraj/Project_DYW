@@ -1,0 +1,39 @@
+<!-- New user Registration -->
+<div class="register">
+  <mat-card style="text-align: center;" class="box">
+      <p class="heading">Looks like you are new here!</p>
+      <mat-card-title class="heading2">Sign up to get Started</mat-card-title>
+      <form #UserRef="ngForm" (ngSubmit)="storeUser(UserRef)">
+
+          <!-- Input for Email -->
+          <p>
+              <mat-form-field style="width:400px !important" class="text1">
+                  <input matInput type="text" name="email" id="exampleInputEmail1" placeholder="Email Address" required ngModel  />
+                  <mat-error>Enter Email</mat-error>
+                  <mat-hint class="text1">Email</mat-hint>
+              </mat-form-field>
+          </p>
+
+          <!-- Input for Password -->
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="text" name="password" id="exampleInputPassword1" placeholder="Password" required ngModel />
+                  <mat-error>Enter Password</mat-error>
+                  <mat-hint class="text1">Password</mat-hint>
+              </mat-form-field>
+          </p>
+
+          <button mat-raised-button class="btn btn-primary" color="dark" type="submit" class="btn btn-dark">Register</button>
+
+      </form>
+      <br>
+
+      <a style="color:#fff;margin-top: 10px;" routerLink="/userlogin">Already have an account? Click here to Login!</a>
+      <br>
+
+      <span style="color:red;font-size: 20px;">{{storeMsg}}</span>
+
+  </mat-card>
+  <br>
+
+</div>

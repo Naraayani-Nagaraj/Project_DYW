@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body
+{
+  height: 100%;
+}
+
+body
+{
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.selector
+{
+    background-image: url("D:/NARAAYANI/MPHASIS/Simplilearn - JFSD/Live virtual class curriculum/Phase 6/Drive your way/Project/DriveYourWay/src/assets/Back.png");
+}

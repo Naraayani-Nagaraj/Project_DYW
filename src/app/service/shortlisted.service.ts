@@ -110,7 +110,6 @@ export class ShortlistedService
     }
   }
 
-
   addtowishlist(product:any)
   {
     let productExists = false

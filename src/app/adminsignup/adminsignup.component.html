@@ -1,0 +1,35 @@
+<div class="register">
+
+  <mat-card style="text-align: center;" class="box">
+
+    <mat-card-title>Admin Registration</mat-card-title>
+
+    <form #AdminRef="ngForm" (ngSubmit)="storeAdmin(AdminRef)">
+
+      <p>
+        <mat-form-field style="width: 400px !important">
+          <input matInput type="text" name="email" id="exampleInputEmail1" placeholder="Email Address" required ngModel/>
+          <mat-error>Enter email</mat-error>
+          <mat-hint class="text1">Email</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field style="width: 400px !important">
+          <input matInput type="text" name="password" id="exampleInputPassword1" placeholder="Password" required ngModel/>
+          <mat-error>Enter Password</mat-error>
+          <mat-hint class="text1">Password</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <button type="submit" class="btn btn-primary sign">Register</button>
+
+    </form>
+    <br>
+
+    <span style="color: red; font-size: 20px;">{{storeMsg}}</span>
+
+  </mat-card>
+  <br>
+  <a mat-raised-button color="dark" style="margin-left: 630px;" routerLink="/adminlogin" class="already">Already have an account? Click here to Login!</a>
+</div>

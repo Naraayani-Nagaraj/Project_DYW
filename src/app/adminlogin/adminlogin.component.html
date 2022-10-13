@@ -1,0 +1,32 @@
+<div class="login">
+  <mat-card style="text-align: center;" class="box">
+
+    <mat-card-title>Admin Login</mat-card-title>
+
+    <form [formGroup] = "loginForm">
+
+      <p>
+        <mat-form-field style="width: 400px !important">
+          <input matInput type="text" formControlName = "email" placeholder="Email Address" required/>
+          <mat-error>Enter email</mat-error>
+          <mat-hint class="text1">Email</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field style="width: 400px !important">
+          <input matInput type="password" formControlName = "password" placeholder="Password" required/>
+          <mat-error>Enter password</mat-error>
+          <mat-hint class="text1">Password</mat-hint>
+        </mat-form-field>
+      </p>
+      <br>
+
+      <button mat-raised-button class="btn btn-primary" color="accent" (click)=onSubmit() class="submit">Login</button>
+
+    </form>
+  </mat-card>
+  <br>
+
+  <a mat-raised-button color="warn" style="margin-left: 630px;" class="register1" routerLink="/adminsignup">Don't have an account? Create Account!</a><br>
+</div>

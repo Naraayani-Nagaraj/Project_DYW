@@ -1,0 +1,98 @@
+<!-- Updating the car details -->
+<div>
+  <div class="container">
+      <div *ngIf="flag">
+          <h2>Update car details</h2>
+          <form (ngSubmit)="updateProductPrice()">
+              <label>Enter car ID</label><br />
+              <input type="number" name="pid" [(ngModel)]="pid" readonly /><br />
+              <label>Enter car Name</label><br />
+              <input type="text" name="pname" [(ngModel)]="pname" /><br />
+              <label>Enter car Price</label><br />
+              <input type="number" name="price" [(ngModel)]="price" /><br />
+              <label>Enter Image URL</label><br />
+              <input type="url" name="url" ngModel /><br />
+              <label>Enter Category Type </label><br />
+              <input type="text" name="category" [(ngModel)]="category" /><br /><br>
+              <button style="margin:5px;" type="submit" class="btn btn-primary bn">Update Product</button>
+              <button style="margin:5px;" type="reset" class="btn btn-primary  bn">Reset</button>
+          </form>
+      </div>
+  </div>
+  <!-- Displaying the car Details in the table -->
+  <h1 style="text-align: center">Car Details</h1>
+  <table class="table mt-3">
+      <thead>
+          <tr>
+              <th scope="col">Car ID</th>
+              <th scope="col">Car Name</th>
+              <th scope="col">Car Price</th>
+              <th scope="col">Images</th>
+              <th scope="col">Category</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Update</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let product of products">
+              <td>{{product.pid}}</td>
+              <td>{{product.pname }}</td>
+              <td>{{product.price}}</td>
+              <td><img src='{{product.url}}' width="200px" height="200px" /> </td>
+              <td>{{product.category}}</td>
+              <td><input type="button" value="Delete" class="btn btn-danger" (click)="deleteProduct(product.pid)" />
+              </td>
+              <td><input type="button" value="Update" class="btn btn-success" (click)="updateProduct(product)" /></td>
+          </tr>
+      </tbody>
+  </table>
+  <mat-card style="text-align: center;" *ngIf="!flag">
+
+      <!-- Adding New car details -->
+      <mat-card-title>Add cars</mat-card-title>
+      <form #productRef="ngForm" (ngSubmit)="storeProduct(productRef)">
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="number" name="pid" placeholder="Enter Product ID here" required ngModel />
+                  <mat-error>Enter CarID</mat-error>
+                  <mat-hint>CarID</mat-hint>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="text" name="pname" placeholder="Enter Product Name here" required ngModel />
+                  <mat-error>Enter Car name</mat-error>
+                  <mat-hint>Car name</mat-hint>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="number" name="price" placeholder="Enter Product Price here" required
+                      ngModel />
+                  <mat-error>Enter Car Price</mat-error>
+                  <mat-hint>Car Price</mat-hint>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="url" name="url" placeholder="Enter Product Image URL here" required ngModel />
+                  <mat-error>Enter Car Image URL</mat-error>
+                  <mat-hint>Car Image URL</mat-hint>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field style="width:400px !important">
+                  <input matInput type="text" name="category" placeholder="Enter Category here" required ngModel />
+                  <mat-error>Enter Category</mat-error>
+                  <mat-hint>category</mat-hint>
+              </mat-form-field>
+          </p>
+          <button mat-raised-button color="warn" style="margin:5px;" type="submit" class="btn btn-primary">Store
+              Detail</button>
+          <button mat-raised-button color="primary" style="margin:5px;" type="reset"
+              class="btn btn-primary ">Reset</button>
+      </form>
+      <br />
+      <hr />
+  </mat-card>
+</div>

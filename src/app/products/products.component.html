@@ -1,0 +1,104 @@
+<div class="card-top container-fluid back">
+  <div class="container d-flex">
+
+      <div class="item">
+          <a (click)="filter('')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://cdn-icons-png.flaticon.com/512/55/55205.png" alt="">
+              <h6>All Types</h6>
+          </a>
+      </div>
+
+      <!--Sedan car-->
+      <div class="item">
+          <a (click)="filter('Sedan')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://www.shutterstock.com/image-vector/red-vector-realistic-3d-car-600w-2154640439.jpg" alt="">
+              <h6>Sedan</h6>
+          </a>
+      </div>
+
+      <!--Hatchback car-->
+      <div class="item">
+          <a (click)="filter('Hatchback')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://media.istockphoto.com/photos/generic-compact-red-car-picture-id495605964?k=20&m=495605964&s=612x612&w=0&h=5EMVUNDeBKEtAJMNXK1x1ejKJRq9Q1RN-ZhCCJpb8Do=" alt="">
+              <h6>Hatchback</h6>
+          </a>
+      </div>
+
+      <!--Convertible car -->
+      <div class="item">
+          <a (click)="filter('Convertible')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://imgd.aeplcdn.com/600x337/cw/ec/37095/BMW-Z4-Roadster-Right-Front-Three-Quarter-153914.jpg?wm=0&q=75"
+                  alt="">
+              <h6>Convertible</h6>
+          </a>
+      </div>
+
+      <!--Coupe car-->
+      <div class="item">
+          <a (click)="filter('Coupe')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://imgd.aeplcdn.com/600x337/n/cw/ec/111981/m4-competition-exterior-right-front-three-quarter.jpeg?isig=0&q=75"
+                  alt="">
+              <h6>Coupe</h6>
+          </a>
+      </div>
+
+      <!--Minivan car-->
+      <div class="item">
+          <a (click)="filter('Minivan')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2d/2019_Chrysler_Pacifica_Touring_L%2C_front_7.4.19.jpg"
+                  alt="">
+              <h6>Minivan</h6>
+          </a>
+      </div>
+
+      <!--Sports car-->
+      <div class="item">
+          <a (click)="filter('Sports Car')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://imageio.forbes.com/specials-images/imageserve/6064c6802c761b99a89d1f21/0x0.jpg?format=jpg&crop=2375,1336,x0,y120,safe&width=1200"
+                  alt="">
+              <h6>Sports car</h6>
+          </a>
+      </div>
+
+      <!--Crossover SUV-->
+      <div class="item">
+          <a (click)="filter('Crossover SUV')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://cars.usnews.com/pics/size/390x290/images/Auto/izmo/i159614594/2022_hyundai_tucson_angularfront.jpg"
+                  alt="">
+              <h6>Crossover SUV</h6>
+          </a>
+      </div>
+
+      <!--Off-road vehicle-->
+      <div class="item">
+          <a (click)="filter('Off-road vehicle')">
+              <img style="width:100px;margin-top: 12px;"
+                  src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dwburnett-bronco-drive-8666-1652210989.jpg?crop=0.917xw:0.916xh;0,0&resize=480:*" alt="">
+              <h6>Off-road vehicle</h6>
+          </a>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <ng-container *ngFor="let product of filterCategory | filter:searchKey:'pname'">
+              <div class="card col-md-3">
+                  <img class="card-img-top" src='{{product.url}}'>
+                  <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                      {{product.pname}}</h5>
+                  <p><strong>Price: </strong>{{product.price}}</p>
+                  <button class="btn btn-dark down" (click)="addtocart(product)"  >Add to Cart</button><br>
+                  <button class="btn btn-dark down" (click)="addtowishList(product)"  >Add to WishList</button>
+              </div>
+          </ng-container>
+      </div>
+  </div>
+</div>
